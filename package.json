@@ -1,18 +1,18 @@
 {
-  "name": "emporio_ribeiro",
+  "name": "scholl_project",
   "version": "1.0.0",
-  "description": "sistema gerenciador do comercio. um sistema pra gerenciar as compras que sao feitas no comercio.",
+  "description": "sistema de gerenciamento de escola",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marciomartins12/emporio_ribeiro.git"
+    "url": "git+https://github.com/marciomartins12/school.git"
   },
   "keywords": [
     "sistema",
-    "comercio"
+    "escola"
   ],
   "author": "marciomartins12 (donaDev)",
   "license": "ISC",
