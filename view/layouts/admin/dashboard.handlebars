@@ -1,0 +1,192 @@
+<header class="navbar">
+        <div class="navbar-left">
+            <span class="system-name">Sistema Escolar</span>
+            <span class="admin-area">Área Administrativa</span>
+        </div>
+        <div class="navbar-right">
+            <div class="user-profile">
+                <span>Dona Admin</span>
+            </div>
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+
+        </div>
+    </header>
+
+    <div class="main-content">
+        <h3>Dashboard Administrativa</h3>
+
+
+        <div class="tabs-list" role="tablist" aria-label="Navegação do Painel Administrativo">
+            <a href="#" class="tab-button active" id="tab-overview" role="tab" aria-selected="true"
+                aria-controls="panel-overview">Visão Geral</a>
+            <a href="#" class="tab-button" id="tab-students" role="tab" aria-selected="false"
+                aria-controls="panel-students">Alunos</a>
+            <a href="#" class="tab-button" id="tab-teachers" role="tab" aria-selected="false"
+                aria-controls="panel-teachers">Professores</a>
+            <a href="#" class="tab-button" id="tab-classes" role="tab" aria-selected="false"
+                aria-controls="panel-classes">Turmas</a>
+            <a href="#" class="tab-button" id="tab-events" role="tab" aria-selected="false"
+                aria-controls="panel-events">Eventos</a>
+            <a href="#" class="tab-button" id="tab-reports" role="tab" aria-selected="false"
+                aria-controls="panel-reports">Relatórios</a>
+            <a href="#" class="tab-button" id="tab-settings" role="tab" aria-selected="false"
+                aria-controls="panel-settings">Configurações</a>
+        </div>
+
+        <section class="overview-cards">
+            <div class="card total-students">
+                <div class="card-header">
+                    <span>Total de Alunos</span>
+                    <i class="fas fa-user-graduate icon"></i>
+                </div>
+                <div class="card-body">
+                    <span class="number">1.247</span>
+                    <span class="detail">+12 novos estudantes</span>
+                </div>
+            </div>
+            <div class="card teachers-count">
+                <div class="card-header">
+                    <span>Professores</span>
+                    <i class="fas fa-chalkboard-teacher icon"></i>
+                </div>
+                <div class="card-body">
+                    <span class="number">85</span>
+                    <span class="detail">todos os turnos</span>
+                </div>
+            </div>
+            <div class="card classes-count">
+                <div class="card-header">
+                    <span>Turmas</span>
+                    <i class="fas fa-chalkboard icon"></i>
+                </div>
+                <div class="card-body">
+                    <span class="number">42</span>
+                    <span class="detail">todos em turno</span>
+                </div>
+            </div>
+
+
+        </section>
+
+        <div class="two-column-layout">
+            <section class="daily-agenda card">
+                <h2>Agenda do Dia</h2>
+                <p class="subtitle">Eventos importantes do dia</p>
+                <ul>
+                    <li>
+                        <div class="agenda-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Reunião com coordenadores</strong>
+                                <small>Sala de apoio</small>
+                            </div>
+                        </div>
+                        <div class="agenda-item-icone">
+                            <span>11:00</span>
+                            <a href="#"><i class="fa-solid fa-xmark" style="color: #e01b24;"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="agenda-item">
+                            <i class="fas fa-handshake"></i>
+                            <div>
+                                <strong>Visita dos pais - 3º B</strong>
+                                <small>Sala 15</small>
+                            </div>
+                        </div>
+                        <div class="agenda-item-icone">
+                            <span>11:00</span>
+                            <a href="#"><i class="fa-solid fa-xmark" style="color: #e01b24;"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="agenda-item">s
+                            <i class="fas fa-user-plus"></i>
+                            <div>
+                                <strong>Entrevista novo professor</strong>
+                                <small>RH</small>
+                            </div>
+                        </div>
+                        <div class="agenda-item-icone">
+                            <span>11:00</span>
+                            <a href="#"><i class="fa-solid fa-xmark" style="color: #e01b24;"></i></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="agenda-item">
+                            <i class="fas fa-gavel"></i>
+                            <div>
+                                <strong>Conselho de classe</strong>
+                                <small>Auditório</small>
+                            </div>
+                        </div>
+                        <div class="agenda-item-icone">
+                            <span>11:00</span>
+                            <a href="#"><i class="fa-solid fa-xmark" style="color: #e01b24;"></i></a>
+                        </div>
+                    </li>
+                </ul>
+               <div class="agenda-adicionar">
+                    <button id="add-agenda-btn" class="btn-action" style="margin-bottom: 20px; width: auto; padding: 8px 15px;">
+                        <i class="fas fa-plus-circle" style="margin-right: 5px;"></i> Adicionar Item
+                    </button>
+                </div>
+            </section>
+
+            <section class="upcoming-events card">
+                <h2>Próximos Eventos</h2>
+                <p class="subtitle">Calendário de gestão do sistema</p>
+                <ul>
+                    <li><i class="fas fa-calendar-alt"></i> Início das aulas <span class="date">2/21</span></li>
+                    <li><i class="fas fa-calendar-alt"></i> Reunião de pais <span class="date">3/21</span></li>
+                    <li><i class="fas fa-calendar-alt"></i> Prova bimestral <span class="date">22/21</span></li>
+                    <li><i class="fas fa-calendar-alt"></i> Feriado municipal <span class="date">25/21</span></li>
+                </ul>
+            </section>
+        </div>
+
+    </div>
+    <div id="agenda-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Adicionar Novo Item à Agenda</h3>
+                <button class="close-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                  <div class="form-group">
+                        <label for="agenda-icon" class="input-label">Ícone do Evento:</label>
+                        <select id="agenda-icon" class="input-field">
+                            <option value="fa-users" selected>Reunião / Pessoas</option>
+                            <option value="fa-handshake">Acordo / Visita</option>
+                            <option value="fa-user-plus">Novo Usuário / Contratação</option>
+                            <option value="fa-gavel">Conselho / Julgamento</option>
+                            <option value="fa-calendar-alt">Calendário / Data</option>
+                            <option value="fa-bell">Alerta / Notificação</option>
+                            <option value="fa-chalkboard-teacher">Aula / Professor</option>
+                            <option value="fa-school">Escola / Instituição</option>
+                            <option value="fa-clipboard">Tarefa / Anotação</option>
+                            <option value="fa-chart-bar">Relatório / Estatística</option>
+                            </select>
+                    </div>
+                <form id="add-agenda-form">
+                    <div class="form-group">
+                        <label for="agenda-title" class="input-label">Título do Evento:</label>
+                        <input type="text" id="agenda-title" class="input-field" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="agenda-time" class="input-label">Horário:</label>
+                        <input type="time" id="agenda-time" class="input-field" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="agenda-description" class="input-label">Descrição/Local:</label>
+                        <textarea id="agenda-description" class="textarea-field" rows="3"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn-action">Adicionar</button>
+                        <button type="button" class="btn-detail close-modal-btn">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/js/dashboradAdmin.js"></script>s
