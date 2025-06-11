@@ -3,7 +3,7 @@ const path = require("path");
 const { engine } = require("express-handlebars");
 const app = express();
 const session = require("express-session");
-const routes = require("./routes/routesPages");
+const adminRouter = require("./routes/adminRouter");
 
 app.engine("handlebars", engine({
     defaultLayout: "main",
@@ -22,7 +22,7 @@ app.use(
     })
 );
 app.use(session({
-    secret: 'ProjectS',
+    secret: 'school',
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false }
@@ -33,7 +33,9 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 
-app.use(routes);
+app.use("/admin", adminRouter)
+app.use("/stundent", studentRouter)
+app.use("/teacher", teacherRouter)
 
 app.listen(8080, () => {
     console.log(`Servidor rodando na porta http://localhost:8080`)
