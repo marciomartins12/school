@@ -1,0 +1,216 @@
+<header class="navbar">
+    <div class="navbar-left">
+        <span class="system-name">Sistema Escolar</span>
+        <span class="admin-area">Área Administrativa</span>
+    </div>
+    <div class="navbar-right">
+        <div class="user-profile">
+            <span>Dona Admin</span>
+        </div>
+        <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+
+    </div>
+</header>
+<div class="main-content">
+
+
+    <div id="panel-students" class="tab-content active">
+        <div class="header-section">
+            <div class="header-info">
+                <h2>Gerenciamento de Alunos</h2>
+            </div>
+
+            <div class="header-actions">
+
+                <button id="novo-aluno-btn" class="btn-primary">
+                    <i class="fas fa-plus-circle"></i> Novo Aluno
+                </button>
+            </div>
+        </div>
+        <div class="tabs-list" role="tablist" aria-label="Navegação do Painel Administrativo">
+            <a href="#" class="tab-button " id="tab-overview" role="tab" aria-selected="true"
+                aria-controls="panel-overview">Visão Geral</a>
+            <a href="#" class="tab-button active" id="tab-students" role="tab" aria-selected="false"
+                aria-controls="panel-students">Alunos</a>
+            <a href="#" class="tab-button" id="tab-teachers" role="tab" aria-selected="false"
+                aria-controls="panel-teachers">Professores</a>
+            <a href="#" class="tab-button" id="tab-classes" role="tab" aria-selected="false"
+                aria-controls="panel-classes">Turmas</a>
+            <a href="#" class="tab-button" id="tab-events" role="tab" aria-selected="false"
+                aria-controls="panel-events">Eventos</a>
+            <a href="#" class="tab-button" id="tab-reports" role="tab" aria-selected="false"
+                aria-controls="panel-reports">Relatórios</a>
+            <a href="#" class="tab-button" id="tab-settings" role="tab" aria-selected="false"
+                aria-controls="panel-settings">Configurações</a>
+        </div>
+        <section class="overview-cards student-overview-cards">
+            <div class="card total-students">
+                <div class="card-header">
+                    <span>Total de Alunos</span>
+                    <i class="fas fa-user-graduate icon"></i>
+                </div>
+                <div class="card-body">
+                    <span class="number">1.247</span>
+                    <span class="detail">+12 novos estudantes</span>
+                </div>
+            </div>
+            <div class="card active-students">
+                <div class="card-header">
+                    <span>Ativos</span>
+                    <i class="fas fa-check-circle icon" style="color: var(--success-color);"></i>
+                </div>
+                <div class="card-body">
+                    <span class="number">1.198</span>
+                    <span class="detail"></span>
+                </div>
+            </div>
+
+            <div class="card general-average">
+                <div class="card-header">
+                    <span>Média Geral</span>
+                    <i class="fas fa-chart-line icon"></i>
+                </div>
+                <div class="card-body">
+                    <span class="number">8.2</span>
+                    <span class="detail"></span>
+                </div>
+            </div>
+        </section>
+
+        <div class="filters-section card">
+            <h3>Filtros</h3>
+            <p>Filtre e busque alunos</p>
+            <div class="filter-controls">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Pesquisar..." class="input-field search-input">
+                </div>
+
+                <select class="input-field filter-select">
+                    <option value="">Todas as turmas</option>
+                    <option value="3A">3º A</option>
+                    <option value="2B">2º B</option>
+                    <option value="1C">1º C</option>
+                </select>
+
+                <button class="btn-primary search-button">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
+            </div>
+        </div>
+
+        <div class="student-list-section card">
+            <h2>Lista de Alunos</h2>
+
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Matrícula</th>
+                            <th>Nome</th>
+                            <th>Turma</th>
+                            <th>Status</th>
+                            <th>Média</th>
+                            <th>Presença</th>
+                            <th>Responsável</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024001</td>
+                            <td>Ana Silva Santos<br><small>ana.silva@email.com</small></td>
+                            <td>3º A</td>
+                            <td><span class="status-tag status-active">Ativo</span></td>
+                            <td>8.5</td>
+                            <td>95%</td>
+                            <td>Maria Silva</td>
+                            <td>
+                                <a href="#" class="action-btn view-btn" data-id="2024001"><i class="fas fa-eye"></i></a
+                                    href="#">
+                                <a href="#" class="action-btn edit-btn" data-id="2024001"><i class="fas fa-edit"></i></a
+                                    href="#">
+                                <a href="#" class="action-btn delete-btn" data-id="2024001"><i
+                                        class="fas fa-trash-alt"></i></a href="#">
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="student-form-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="student-modal-title">Novo Aluno</h3>
+                <button class="close-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="student-form">
+                    <input type="hidden" id="student-id">
+
+                    <div class="form-group">
+                        <label for="student-dob" class="input-label">Data de Nascimento:</label>
+                        <input required type="date" id="student-dob" class="input-field  styled-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-gender" class="input-label">Gênero:</label>
+                        <select id="student-gender" class="input-field styled-input">
+                            <option value="">Selecione</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Outro">Outro</option>
+                            <option value="Prefere não dizer">Prefere não dizer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-cpf" class="input-label">CPF do Aluno:</label>
+                        <input required type="text" id="student-cpf" class="input-field styled-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-endereco" class="input-label">Endereço:</label>
+                        <textarea id="student-endereco" class="input-field styled-input" rows="2"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-necessidades" class="input-label">Necessidades Especiais:</label>
+                        <textarea id="student-necessidades" class="input-field styled-input" rows="2"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-mae" class="input-label">Nome da Mãe:</label>
+                        <input required type="text" id="student-mae" class="input-field styled-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-pai" class="input-label">Nome do Pai:</label>
+                        <input required type="text" id="student-pai" class="input-field styled-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-observacoes" class="input-label">Observações:</label>
+                        <textarea id="student-observacoes" class="input-field styled-input" rows="3"></textarea>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="student-matricula" class="input-label">Data de Matrícula:</label>
+                        <input required type="date" id="student-matricula" class="input-field styled-input">
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn-action" id="save-student-btn">Salvar</button>
+                        <button type="button" class="btn-detail close-modal-btn">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
