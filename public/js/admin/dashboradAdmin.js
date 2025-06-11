@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const addAgendaBtn = document.getElementById('add-agenda-btn');
     const agendaModal = document.getElementById('agenda-modal');
     const closeModalBtns = document.querySelectorAll('.close-modal-btn')
-    const agendaList = document.querySelector('.daily-agenda ul'); 
-
+    
  
     if (addAgendaBtn) { 
         addAgendaBtn.addEventListener('click', () => {
