@@ -34,8 +34,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 
 app.use("/admin", adminRouter)
-app.use("/stundent", studentRouter)
-app.use("/teacher", teacherRouter)
+//app.use("/stundent", studentRouter)
+//app.use("/teacher", teacherRouter)
 
 app.listen(8080, () => {
     console.log(`Servidor rodando na porta http://localhost:8080`)
