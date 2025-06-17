@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" href="/css/admin/dashboard.css">
-    <link rel="stylesheet" href="/css/admin/studentAndTeacher.css">
+    <link rel="stylesheet" href="/css/admin/student.css">
 </head>
 
 <header class="navbar">
@@ -17,16 +17,16 @@
     </div>
 </header>
 <div class="main-content">
-    <h3>Gerenciamento de Alunos</h3>
+    <h3>Gerenciamento de Professores</h3>
 
     <div id="panel-students" class="tab-content active">
 
         <div class="tabs-list" role="tablist" aria-label="Navegação do Painel Administrativo">
             <a href="/admin/" class="tab-button " id="tab-overview" role="tab" aria-selected="true"
                 aria-controls="panel-overview">Visão Geral</a>
-            <a href="#" class="tab-button active" id="tab-students" role="tab" aria-selected="false"
+            <a href="/admin/student" class="tab-button active" id="tab-students" role="tab" aria-selected="false"
                 aria-controls="panel-students">Alunos</a>
-            <a href="/admin/teacher" class="tab-button" id="tab-teachers" role="tab" aria-selected="false"
+            <a href="#" class="tab-button" id="tab-teachers" role="tab" aria-selected="false"
                 aria-controls="panel-teachers">Professores</a>
             <a href="/admin/class" class="tab-button" id="tab-classes" role="tab" aria-selected="false"
                 aria-controls="panel-classes">Turmas</a>
@@ -40,7 +40,7 @@
         <section class="overview-cards student-overview-cards">
             <div class="card total-students">
                 <div class="card-header">
-                    <span>Total de Alunos</span>
+                    <span>Total de Professores</span>
                     <i class="fas fa-user-graduate icon"></i>
                 </div>
                 <div class="card-body">
@@ -61,12 +61,12 @@
 
             <div class="card general-average">
                 <div class="card-header">
-                    <span>click aqui para adicionar Alunos</span>
+                    <span>click aqui para adicionar professores</span>
                     <i class="fas fa-plus icon"></i>
                 </div>
                 <div >
                     <span class="number"><button id="novo-aluno-btn" class="btn-primary">
-                            <i class="fas fa-plus-circle"></i> Novo Aluno
+                            <i class="fas fa-plus-circle"></i> Novo professor
                         </button>
                     </span>
                 </div>
@@ -75,7 +75,7 @@
 
         <div class="filters-section card">
             <h3>Filtros</h3>
-            <p>Filtre e busque alunos</p>
+            <p>Filtre e busque professor</p>
             <div class="filter-controls">
                 <div class="search-input-wrapper">
                     <i class="fas fa-search search-icon"></i>
@@ -141,31 +141,22 @@
     <div id="student-form-modal" class="modal-overlay">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 id="student-modal-title">Novo Aluno</h3>
+                <h3 id="student-modal-title">Novo Professor</h3>
                 <button class="close-modal-btn">&times;</button>
             </div>
             <div class="modal-body">
                 <form id="student-form">
-                    <input type="hidden" id="student-id">
+                    <input type="hidden" id="teacher-id">
 
                     <div class="form-group">
-                        <label for="student-dob" class="input-label">Data de Nascimento:</label>
+                        <label for="student-dob" class="input-label">Nome Completo:</label>
                         <input required type="date" id="student-dob" class="input-field  styled-input">
                     </div>
 
-                    <div class="form-group">
-                        <label for="student-gender" class="input-label">Gênero:</label>
-                        <select id="student-gender" class="input-field styled-input">
-                            <option value="">Selecione</option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Feminino">Feminino</option>
-                            <option value="Outro">Outro</option>
-                            <option value="Prefere não dizer">Prefere não dizer</option>
-                        </select>
-                    </div>
+                    {{!-- ainda nao sei como vou colocar pra escolher as turmas dque o professor vai ser responvavel ou as turmas --}}
 
                     <div class="form-group">
-                        <label for="student-cpf" class="input-label">CPF do Aluno:</label>
+                        <label for="student-cpf" class="input-label">CPF</label>
                         <input required type="text" id="student-cpf" class="input-field styled-input">
                     </div>
 
@@ -175,29 +166,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="student-necessidades" class="input-label">Necessidades Especiais:</label>
-                        <textarea id="student-necessidades" class="input-field styled-input" rows="2"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="student-mae" class="input-label">Nome da Mãe:</label>
-                        <input required type="text" id="student-mae" class="input-field styled-input">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="student-pai" class="input-label">Nome do Pai:</label>
-                        <input required type="text" id="student-pai" class="input-field styled-input">
-                    </div>
-
-                    <div class="form-group">
                         <label for="student-observacoes" class="input-label">Observações:</label>
                         <textarea id="student-observacoes" class="input-field styled-input" rows="3"></textarea>
                     </div>
 
-
-
                     <div class="form-group">
-                        <label for="student-matricula" class="input-label">Data de Matrícula:</label>
+                        <label for="student-matricula" class="input-label">Data do inicio:</label>
                         <input required type="date" id="student-matricula" class="input-field styled-input">
                     </div>
 
@@ -210,4 +184,4 @@
         </div>
     </div>
 </div>
-<script src="/js/admin/student.js"></script>
+<script src="/js/admin/teacher.js"></script>
