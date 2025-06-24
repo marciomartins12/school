@@ -5,4 +5,5 @@ const adminController = require('../controllers/adminController');
 router.get("/", adminController.dashboard);
 router.get("/student", adminController.student);
 router.get("/teacher", adminController.teacher);
+router.get("/events", adminController.event);
 module.exports = router 

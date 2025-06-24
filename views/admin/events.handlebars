@@ -1,0 +1,98 @@
+<head>
+    <link rel="stylesheet" href="/css/admin/dashboard.css">
+    <link rel="stylesheet" href="/css/admin/events.css">
+</head>
+
+<header class="navbar">
+    <div class="navbar-left">
+        <span class="system-name">Sistema Escolar</span>
+        <span class="admin-area">Área Administrativa</span>
+    </div>
+    <div class="navbar-right">
+        <div class="user-profile">
+            <span>Dona Admin</span>
+        </div>
+        <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+
+    </div>
+</header>
+<div class="main-content">
+    <h3>Gerenciamento de Eventos</h3>
+
+    <div id="panel-students" class="tab-content active">
+
+        <div class="tabs-list" role="tablist" aria-label="Navegação do Painel Administrativo">
+            <a href="/admin/" class="tab-button " id="tab-overview" role="tab" aria-selected="true"
+                aria-controls="panel-overview">Visão Geral</a>
+            <a href="/admin/student" class="tab-button" id="tab-students" role="tab" aria-selected="false"
+                aria-controls="panel-students">Alunos</a>
+            <a href="/admin/teacher" class="tab-button" id="tab-teachers" role="tab" aria-selected="false"
+                aria-controls="panel-teachers">Professores</a>
+            <a href="/admin/class" class="tab-button" id="tab-classes" role="tab" aria-selected="false"
+                aria-controls="panel-classes">Turmas</a>
+            <a href="#" class="tab-button active" id="tab-events" role="tab" aria-selected="false"
+                aria-controls="panel-events">Eventos</a>
+            <a href="/admin/repots" class="tab-button" id="tab-reports" role="tab" aria-selected="false"
+                aria-controls="panel-reports">Relatórios</a>
+            <a href="/admin/settings" class="tab-button" id="tab-settings" role="tab" aria-selected="false"
+                aria-controls="panel-settings">Configurações</a>
+        </div>
+    </div>
+    <section class="container-ddy">
+        <div class="container">
+            <div class="header">
+                <div>
+                    <h1 class="header-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2v-7H3v7a2 2 0 002 2z" />
+                        </svg>
+                        Gerenciar Eventos
+                    </h1>
+                    <p class="header-subtitle">Adicione, edite ou remova eventos do calendário escolar</p>
+                </div>
+                <button id="btnNovoEvento" class="button-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon-button" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                    Novo Evento
+                </button>
+            </div>
+
+            <form id="formEvento" class="form-hidden" autocomplete="off">
+                <div>
+                    <label for="inputData" class="form-label">Data</label>
+                    <input type="date" id="inputData" name="data" class="form-input" required />
+                </div>
+                <div>
+                    <label for="inputTitulo" class="form-label">Título do Evento</label>
+                    <input type="text" id="inputTitulo" name="titulo" placeholder="Digite o título" class="form-input"
+                        required maxlength="60" />
+                </div>
+                <div>
+                    <label for="inputTipo" class="form-label">Tipo</label>
+                    <select id="inputTipo" name="tipo" class="form-input" required>
+                        <option value="" disabled selected>Selecione um tipo</option>
+                        <option value="Prova">Prova</option>
+                        <option value="Atividade">Atividade</option>
+                        <option value="Evento">Evento</option>
+                        <option value="Feriado">Feriado</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="btnCancelar" class="button-secondary">Cancelar</button>
+                    <button type="submit" class="button-submit">Adicionar</button>
+                </div>
+            </form>
+
+            <div id="listaEventos" class="event-list">
+            </div>
+        </div>
+    </section>
+
+
+
+</div>
+<script src="/js/admin/events.js"></script>
