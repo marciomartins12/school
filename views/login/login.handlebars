@@ -1,72 +1,79 @@
- <head>
+<head>
     <link rel="stylesheet" href="/css/login/login.css">
- </head>
- <div class="login-container">
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.165.0/three.module.min.js"></script>
+</head>
+<canvas id="background-canvas"></canvas>
+<div class="page-container">
+    <header class="app-header">
+        <div class="logo">Escola</div>
+        <p class="tagline">Seu portal educacional</p>
+    </header>
+
+    <div class="login-card-wrapper">
         <div class="login-card">
             <div class="login-header">
-                <h2>Bem-vindo(a) de volta!</h2>
-                <p>Faça login para acessar o sistema.</p>
+                <h2>Bem-vindo(a)!</h2>
+                <p>Faça login para acessar sua conta.</p>
             </div>
             <form class="login-form">
                 <div class="form-group">
-                    <label for="account-type">Tipo de Conta:</label>
+                    <label for="account-type">Tipo de Conta</label>
                     <div class="select-wrapper">
                         <select id="account-type" onchange="toggleLoginFields()">
                             <option value="aluno">Aluno</option>
                             <option value="professor">Professor</option>
                             <option value="admin">Administrador</option>
-                            <option value="refeitorio">Refeitório</option>
+                            <option value="cantina">Cantina</option>
                         </select>
-                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-chevron-down select-icon"></i>
                     </div>
                 </div>
 
                 <div id="aluno-fields" class="account-fields">
                     <div class="form-group">
-                        <label for="aluno-cpf">CPF:</label>
+                        <label for="aluno-cpf">CPF</label>
                         <input type="text" id="aluno-cpf" placeholder="Seu CPF" required>
                     </div>
                     <div class="form-group">
-                        <label for="aluno-senha">Senha:</label>
+                        <label for="aluno-senha">Senha</label>
                         <input type="password" id="aluno-senha" placeholder="Sua senha" required>
                     </div>
                 </div>
 
                 <div id="professor-fields" class="account-fields hidden">
                     <div class="form-group">
-                        <label for="professor-email">E-mail:</label>
+                        <label for="professor-email">E-mail</label>
                         <input type="email" id="professor-email" placeholder="Seu e-mail" required>
                     </div>
                     <div class="form-group">
-                        <label for="professor-senha">Senha:</label>
+                        <label for="professor-senha">Senha</label>
                         <input type="password" id="professor-senha" placeholder="Sua senha" required>
                     </div>
                 </div>
 
                 <div id="admin-fields" class="account-fields hidden">
                     <div class="form-group">
-                        <label for="admin-email">E-mail:</label>
+                        <label for="admin-email">E-mail</label>
                         <input type="email" id="admin-email" placeholder="Seu e-mail" required>
                     </div>
                     <div class="form-group">
-                        <label for="admin-senha">Senha:</label>
+                        <label for="admin-senha">Senha</label>
                         <input type="password" id="admin-senha" placeholder="Sua senha" required>
                     </div>
                 </div>
 
-                <div id="refeitorio-fields" class="account-fields hidden">
+                <div id="cantina-fields" class="account-fields hidden">
                     <div class="form-group">
-                        <label for="refeitorio-senha">Senha do Refeitório:</label>
-                        <input type="password" id="refeitorio-senha" placeholder="Senha do refeitório" required>
+                        <label for="cantina-senha">Senha da Cantina</label>
+                        <input type="password" id="cantina-senha" placeholder="Senha da cantina" required>
                     </div>
                 </div>
-                
+
                 <button type="submit" class="login-button">Entrar</button>
-                
-                <div class="forgot-password">
-                    <a href="#">Esqueceu sua senha?</a>
-                </div>
+
+
             </form>
         </div>
     </div>
-    <script src="/js/login/login.js"></script>
+</div>
+<script type="module" src="/js/login/login.js"></script>

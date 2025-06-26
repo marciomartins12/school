@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary-blue: #007bff; /* Um azul vibrante */
-    --light-blue: #e6f0ff; /* Um azul mais claro para detalhes */
-    --text-color: #333;
-    --light-grey: #f0f2f5;
-    --white: #ffffff;
+    --primary-blue: #007bff; 
+    --light-blue-accent: #e6f0ff; 
+    --text-dark: #333;
+    --text-light: #666;
+    --background-grey: #f0f2f5; 
+    --card-background: #ffffff;
     --border-color: #ddd;
-    --shadow-color: rgba(0, 0, 0, 0.08);
+    --shadow-subtle: rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -18,29 +19,78 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--light-grey);
+    background-color: var(--background-grey);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    color: var(--text-dark);
+    position: relative;
+    overflow: hidden;
 }
 
-.login-container {
+
+#background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 450px;
-    background-color: var(--white);
+    height: 100%;
+    z-index: -1; 
+    background-color: transparent; 
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 480px; 
+    position: relative; 
+    z-index: 1; 
+}
+
+.app-header {
+    margin-bottom: 40px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.app-header .logo {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+    letter-spacing: -1px;
+}
+
+.app-header .tagline {
+    font-size: 1.1em;
+    color: var(--text-light);
+    opacity: 0.9;
+}
+
+.login-card-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background-color: var(--card-background);
     border-radius: 12px;
-    box-shadow: 0 8px 24px var(--shadow-color);
-    overflow: hidden;
+    box-shadow: 0 8px 24px var(--shadow-subtle);
     padding: 40px;
     text-align: center;
+    width: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.login-container:hover {
+.login-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px var(--shadow-color);
+    box-shadow: 0 12px 30px var(--shadow-subtle);
 }
 
 .login-header {
@@ -48,15 +98,15 @@ body {
 }
 
 .login-header h2 {
-    color: var(--primary-blue);
-    font-size: 2.2em;
+    color: var(--text-dark);
+    font-size: 1.8em;
     margin-bottom: 10px;
     font-weight: 600;
 }
 
 .login-header p {
-    color: var(--text-color);
-    font-size: 1em;
+    color: var(--text-light);
+    font-size: 0.95em;
     opacity: 0.8;
 }
 
@@ -68,9 +118,9 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    color: var(--text-color);
+    color: var(--text-dark);
     font-weight: 500;
-    font-size: 0.95em;
+    font-size: 0.9em;
 }
 
 .form-group input[type="text"],
@@ -82,10 +132,10 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 1em;
-    color: var(--text-color);
-    background-color: var(--light-grey); /* Fundo sutil */
+    color: var(--text-dark);
+    background-color: var(--background-grey);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    -webkit-appearance: none; /* Remove default styling for select */
+    -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
@@ -94,7 +144,7 @@ body {
 .form-group select:focus {
     border-color: var(--primary-blue);
     outline: none;
-    box-shadow: 0 0 0 3px var(--light-blue);
+    box-shadow: 0 0 0 3px var(--light-blue-accent);
 }
 
 .select-wrapper {
@@ -102,23 +152,23 @@ body {
 }
 
 .select-wrapper select {
-    padding-right: 40px; /* Make space for the arrow icon */
+    padding-right: 40px;
 }
 
-.select-wrapper .fa-chevron-down {
+.select-wrapper .select-icon {
     position: absolute;
     right: 18px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--text-color);
-    pointer-events: none; /* Make icon not clickable */
+    color: var(--text-light);
+    pointer-events: none;
 }
 
 .login-button {
     width: 100%;
     padding: 15px;
     background-color: var(--primary-blue);
-    color: var(--white);
+    color: var(--card-background);
     border: none;
     border-radius: 8px;
     font-size: 1.1em;
@@ -129,7 +179,7 @@ body {
 }
 
 .login-button:hover {
-    background-color: #0056b3; /* Um tom mais escuro de azul */
+    background-color: #0056b3;
     transform: translateY(-2px);
 }
 
@@ -159,13 +209,29 @@ body {
 
 /* Responsividade */
 @media (max-width: 600px) {
-    .login-container {
+    .page-container {
+        padding: 15px;
+    }
+
+    .app-header {
+        margin-bottom: 30px;
+    }
+
+    .app-header .logo {
+        font-size: 2.5em;
+    }
+
+    .app-header .tagline {
+        font-size: 1em;
+    }
+
+    .login-card {
         padding: 30px;
         border-radius: 8px;
     }
 
     .login-header h2 {
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
 
     .form-group input,
