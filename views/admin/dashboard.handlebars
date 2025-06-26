@@ -74,7 +74,7 @@
 
         <div class="two-column-layout">
             <section class="daily-agenda card">
-                <h2>Agenda do Dia</h2>
+                <h2>Agenda</h2>
                 <p class="subtitle">Eventos importantes do dia</p>
                 <ul>
                     <li>
@@ -131,68 +131,17 @@
                     </li>
                 </ul>
                <div class="agenda-adicionar">
-                    <button id="add-agenda-btn" class="btn-action" style="margin-bottom: 20px; width: auto; padding: 8px 15px;">
+                    <a href="/admin/events" id="add-agenda-btn" class="btn-action" style="margin-bottom: 20px; width: auto; padding: 8px 15px;">
                         <i class="fas fa-plus-circle" style="margin-right: 5px;"></i> Adicionar Item
-                    </button>
+                    </a>
                 </div>
             </section>
 
-            <section class="upcoming-events card">
-                <h2>Próximos Eventos</h2>
-                <p class="subtitle">Calendário de gestão do sistema</p>
-                <ul>
-                    <li><i class="fas fa-calendar-alt"></i> Início das aulas <span class="date">2/21</span></li>
-                    <li><i class="fas fa-calendar-alt"></i> Reunião de pais <span class="date">3/21</span></li>
-                    <li><i class="fas fa-calendar-alt"></i> Prova bimestral <span class="date">22/21</span></li>
-                    <li><i class="fas fa-calendar-alt"></i> Feriado municipal <span class="date">25/21</span></li>
-                </ul>
-            </section>
+            
         </div>
 
     </div>
 
-    <div id="agenda-modal" class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Adicionar Novo Item à Agenda</h3>
-                <button class="close-modal-btn">&times;</button>
-            </div>
-            <div class="modal-body">
-                  <div class="form-group">
-                        <label for="agenda-icon" class="input-label">Ícone do Evento:</label>
-                        <select id="agenda-icon" class="input-field">
-                            <option value="fa-users" selected>Reunião / Pessoas</option>
-                            <option value="fa-handshake">Acordo / Visita</option>
-                            <option value="fa-user-plus">Novo Usuário / Contratação</option>
-                            <option value="fa-gavel">Conselho / Julgamento</option>
-                            <option value="fa-calendar-alt">Calendário / Data</option>
-                            <option value="fa-bell">Alerta / Notificação</option>
-                            <option value="fa-chalkboard-teacher">Aula / Professor</option>
-                            <option value="fa-school">Escola / Instituição</option>
-                            <option value="fa-clipboard">Tarefa / Anotação</option>
-                            <option value="fa-chart-bar">Relatório / Estatística</option>
-                            </select>
-                    </div>
-                <form id="add-agenda-form">
-                    <div class="form-group">
-                        <label for="agenda-title" class="input-label">Título do Evento:</label>
-                        <input type="text" id="agenda-title" class="input-field" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="agenda-time" class="input-label">Horário:</label>
-                        <input type="time" id="agenda-time" class="input-field" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="agenda-description" class="input-label">Descrição/Local:</label>
-                        <textarea id="agenda-description" class="textarea-field" rows="3"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn-action">Adicionar</button>
-                        <button type="button" class="btn-detail close-modal-btn">Cancelar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+   
     </div>
     
-<script src="/js/admin/dashboard.js"></script>

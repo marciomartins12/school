@@ -30,7 +30,7 @@
                 aria-controls="panel-teachers">Professores</a>
             <a href="/admin/class" class="tab-button" id="tab-classes" role="tab" aria-selected="false"
                 aria-controls="panel-classes">Turmas</a>
-            <a href="#" class="tab-button active" id="tab-events" role="tab" aria-selected="false"
+            <a href="#" class="active tab-button " id="tab-events" role="tab" aria-selected="false"
                 aria-controls="panel-events">Eventos</a>
             <a href="/admin/repots" class="tab-button" id="tab-reports" role="tab" aria-selected="false"
                 aria-controls="panel-reports">Relatórios</a>
@@ -61,35 +61,70 @@
                 </button>
             </div>
 
-            <form id="formEvento" class="form-hidden" autocomplete="off">
-                <div>
-                    <label for="inputData" class="form-label">Data</label>
-                    <input type="date" id="inputData" name="data" class="form-input" required />
-                </div>
-                <div>
-                    <label for="inputTitulo" class="form-label">Título do Evento</label>
-                    <input type="text" id="inputTitulo" name="titulo" placeholder="Digite o título" class="form-input"
-                        required maxlength="60" />
-                </div>
-                <div>
-                    <label for="inputTipo" class="form-label">Tipo</label>
-                    <select id="inputTipo" name="tipo" class="form-input" required>
-                        <option value="" disabled selected>Selecione um tipo</option>
-                        <option value="Prova">Prova</option>
-                        <option value="Atividade">Atividade</option>
-                        <option value="Evento">Evento</option>
-                        <option value="Feriado">Feriado</option>
-                    </select>
-                </div>
-                <div class="form-actions">
-                    <button type="button" id="btnCancelar" class="button-secondary">Cancelar</button>
-                    <button type="submit" class="button-submit">Adicionar</button>
-                </div>
-            </form>
 
             <div id="listaEventos" class="event-list">
+                <div class="two-column-layout">
+                    <section class="daily-agenda card">
+                        <p class="subtitle">Eventos</p>
+                        <ul>
+                            <li>
+                                <div class="agenda-item">
+                                    <i class="fas fa-users"></i>
+                                    <div>
+                                        <strong>Reunião com coordenadores</strong>
+                                        <small>Sala de apoio</small>
+                                    </div>
+                                </div>
+                                <div class="agenda-item-icone">
+                                    <span>11:00</span>
+                                    <a href="#"><i class="fa-solid fa-xmark" style="color: #e01b24;"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="agenda-item">
+                                    <i class="fas fa-handshake"></i>
+                                    <div>
+                                        <strong>Visita dos pais - 3º B</strong>
+                                        <small>Sala 15</small>
+                                    </div>
+                                </div>
+                                <div class="agenda-item-icone">
+                                    <span>11:00</span>
+                                    <a href="#"><i class="fa-solid fa-xmark" style="color: #e01b24;"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="agenda-item">s
+                                    <i class="fas fa-user-plus"></i>
+                                    <div>
+                                        <strong>Entrevista novo professor</strong>
+                                        <small>RH</small>
+                                    </div>
+                                </div>
+                                <div class="agenda-item-icone">
+                                    <span>11:00</span>
+                                    <a href="#"><i class="fa-solid fa-xmark" style="color: #e01b24;"></i></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="agenda-item">
+                                    <i class="fas fa-gavel"></i>
+                                    <div>
+                                        <strong>Conselho de classe</strong>
+                                        <small>Auditório</small>
+                                    </div>
+                                </div>
+                                <div class="agenda-item-icone">
+                                    <span>11:00</span>
+                                    <a href="#"><i class="fa-solid fa-xmark" style="color: #e01b24;"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </section>
+
+                </div>
             </div>
-        </div>
     </section>
 
 

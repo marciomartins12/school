@@ -110,7 +110,8 @@
     display: flex;
     justify-content: end;
 }
-.agenda-adicionar button{
+.agenda-adicionar a{
+    text-decoration: none;
     border: none;
     cursor: pointer;
     border-radius: .45em;
@@ -202,9 +203,7 @@
 }
 
 .two-column-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    
     margin-bottom: 30px;
 }
 
