@@ -33,4 +33,12 @@ module.exports = class adminController {
             res.status(500).serd("erro ao buscar a pagina");
         }
     }
+    static async class(req, res) {
+        try {
+            res.render('admin/class');
+        } catch (error) {
+            console.log(error, 'erro ao renderizar a página inicial do admin');
+            res.status(500).serd("erro ao buscar a pagina");
+        }
+    }
 }
