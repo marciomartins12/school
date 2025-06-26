@@ -3,8 +3,8 @@ const path = require("path");
 const { engine } = require("express-handlebars");
 const app = express();
 const session = require("express-session");
+const loginController = require("./controllers/loginController");
 const adminRouter = require("./routes/adminRouter");
-
 app.engine("handlebars", engine({
     defaultLayout: "main",
     runtimeOptions: {
@@ -32,7 +32,7 @@ app.use(session({
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-
+app.use("/", loginController.login);
 app.use("/admin", adminRouter)
 //app.use("/stundent", studentRouter)
 //app.use("/teacher", teacherRouter)
