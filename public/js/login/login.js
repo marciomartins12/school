@@ -1,8 +1,9 @@
 // Importa o Three.js
 
 import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.165.0/three.module.min.js';
+
 document.addEventListener('DOMContentLoaded', function () {
-   
+    // --- Lógica de Toggle de Campos (já existente) ---
     toggleLoginFields();
 
     // --- Lógica do Three.js para o Fundo 3D ---
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
             canvasTex.width = canvasTex.height = canvasSize;
 
             const ctx = canvasTex.getContext('2d');
-            ctx.fillStyle = '#038';
+            ctx.fillStyle = '#007bff';
             ctx.fillRect(0, 0, canvasSize, canvasSize);
 
             ctx.font = 'bold 32px sans-serif';

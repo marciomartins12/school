@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary-blue: #007bff; 
-    --light-blue-accent: #e6f0ff; 
+    --primary-blue: #007bff; /* O azul vibrante do dashboard */
+    --light-blue-accent: #e6f0ff; /* Azul mais claro para fundos e detalhes */
     --text-dark: #333;
     --text-light: #666;
-    --background-grey: #f0f2f5; 
+    --background-grey: #f0f2f5; /* Fundo do corpo */
     --card-background: #ffffff;
     --border-color: #ddd;
     --shadow-subtle: rgba(0, 0, 0, 0.08);
@@ -26,19 +26,19 @@ body {
     min-height: 100vh;
     padding: 20px;
     color: var(--text-dark);
-    position: relative;
-    overflow: hidden;
+    position: relative; /* Para o canvas se posicionar */
+    overflow: hidden; /* Evita scroll desnecessário do canvas */
 }
 
-
+/* Canvas para o fundo 3D */
 #background-canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; 
-    background-color: transparent; 
+    z-index: -1; /* Fica atrás do conteúdo */
+    background-color: transparent; /* Permite ver o body background */
 }
 
 .page-container {
@@ -46,9 +46,9 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 480px; 
-    position: relative; 
-    z-index: 1; 
+    max-width: 480px; /* Largura máxima para o conteúdo */
+    position: relative; /* Para garantir que o conteúdo fique acima do canvas */
+    z-index: 1; /* Conteúdo acima do canvas */
 }
 
 .app-header {
