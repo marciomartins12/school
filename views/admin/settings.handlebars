@@ -1,0 +1,318 @@
+<head>
+    <link rel="stylesheet" href="/css/admin/settings.css">
+    <link rel="stylesheet" href="/css/admin/dashboard.css">
+</head>
+
+
+
+<header class="navbar">
+    <div class="navbar-left">
+        <span class="system-name">Sistema Escolar</span>
+        <span class="admin-area">Área Administrativa</span>
+    </div>
+    <div class="navbar-right">
+        <div class="user-profile">
+            <span>Dona Admin</span>
+        </div>
+        <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+
+    </div>
+</header>
+
+<div class="main-content">
+    <h3>Dashboard Administrativa</h3>
+
+
+    <div class="tabs-list" role="tablist" aria-label="Navegação do Painel Administrativo">
+        <a href="/admin/dashboard" class="tab-button " id="tab-overview" role="tab" aria-selected="true"
+            aria-controls="panel-overview">Visão Geral</a>
+        <a href="/admin/student" class="tab-button" id="tab-students" role="tab" aria-selected="false"
+            aria-controls="panel-students">Alunos</a>
+        <a href="/admin/teacher" class="tab-button" id="tab-teachers" role="tab" aria-selected="false"
+            aria-controls="panel-teachers">Professores</a>
+        <a href="/admin/class" class="tab-button" id="tab-classes" role="tab" aria-selected="false"
+            aria-controls="panel-classes">Turmas</a>
+        <a href="/admin/events" class="tab-button" id="tab-events" role="tab" aria-selected="false"
+            aria-controls="panel-events">Eventos</a>
+        <a href="/admin/reports" class="tab-button" id="tab-reports" role="tab" aria-selected="false"
+            aria-controls="panel-reports">Relatórios</a>
+        <a href="#" class="tab-button active" id="tab-settings" role="tab" aria-selected="false"
+            aria-controls="panel-settings">Configurações</a>
+    </div>
+
+    <form action="/save_configurations" method="post" class="main-form">
+
+        <main class="main-content">
+            <section class="section-card">
+                <div class="card-header">
+                    <i class="fas fa-cogs"></i>
+                    <h2>Configurações do Sistema</h2>
+                    <p>Configure parâmetros gerais e funcionalidades</p>
+                </div>
+                <div class="card-content-grid">
+                    <div class="card card-info-escola">
+                        <div class="card-header-icon">
+                            <i class="fas fa-school"></i>
+                            <h3>Informações da Escola</h3>
+                        </div>
+                        <p>Dados básicos da instituição</p>
+                        <div class="form-group">
+                            <label for="nomeEscola">Nome da Escola</label>
+                            <input type="text" id="nomeEscola" name="nomeEscola" value="Colégio São Francisco">
+                        </div>
+                        <div class="form-group">
+                            <label for="cnpj">CNPJ</label>
+                            <input type="text" id="cnpj" name="cnpj" value="12.345.678/0001-90">
+                        </div>
+                        <div class="form-group">
+                            <label for="endereco">Endereço</label>
+                            <input type="text" id="endereco" name="endereco"
+                                value="Rua das Flores, 123 - Centro - São Paulo/SP - CEP: 01234-567">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefone">Telefone</label>
+                                <input type="text" id="telefone" name="telefone" value="(11) 3456-7890">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" value="contato@exedf.edu.br">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-ano-letivo">
+                        <div class="card-header-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h3>Ano Letivo</h3>
+                        </div>
+                        <p>Configurações do período letivo</p>
+                        <div class="form-group">
+                            <label for="anoLetivo">Ano Letivo Atual</label>
+                            <select id="anoLetivo" name="anoLetivo">
+                                <option value="2024" selected>2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2023">2023</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inicioAno">Início do Ano</label>
+                                <input type="date" id="inicioAno" name="inicioAno" value="2024-02-05">
+                            </div>
+                            <div class="form-group">
+                                <label for="fimAno">Fim do Ano</label>
+                                <input type="date" id="fimAno" name="fimAno" value="2024-12-15">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bimestreAtual">Bimestre Atual</label>
+                            <select id="bimestreAtual" name="bimestreAtual">
+                                <option value="1" selected>1º Bimestre</option>
+                                <option value="2">2º Bimestre</option>
+                                <option value="3">3º Bimestre</option>
+                                <option value="4">4º Bimestre</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-card">
+                <div class="card-header">
+                    <i class="fas fa-clock"></i>
+                    <h2>Horários e Turnos</h2>
+                    <p>Configure os horários de funcionamento</p>
+                </div>
+                <div class="card-content-grid-3">
+                    <div class="card card-turno">
+                        <h4>Turno Manhã</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inicioManha">Início</label>
+                                <input type="time" id="inicioManha" name="inicioManha" value="07:30">
+                            </div>
+                            <div class="form-group">
+                                <label for="fimManha">Fim</label>
+                                <input type="time" id="fimManha" name="fimManha" value="12:00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-turno">
+                        <h4>Turno Tarde</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inicioTarde">Início</label>
+                                <input type="time" id="inicioTarde" name="inicioTarde" value="13:30">
+                            </div>
+                            <div class="form-group">
+                                <label for="fimTarde">Fim</label>
+                                <input type="time" id="fimTarde" name="fimTarde" value="17:30">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-turno">
+                        <h4>Turno Noite</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inicioNoite">Início</label>
+                                <input type="time" id="inicioNoite" name="inicioNoite" value="19:00">
+                            </div>
+                            <div class="form-group">
+                                <label for="fimNoite">Fim</label>
+                                <input type="time" id="fimNoite" name="fimNoite" value="22:30">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-dual-card">
+                <section class="section-card card-half">
+                    <div class="card-header">
+                        <i class="fas fa-bell"></i>
+                        <h2>Notificações</h2>
+                        <p>Configure alertas e notificações</p>
+                    </div>
+                    <div class="card-content-list">
+                        <div class="list-item">
+                            <div class="list-item-text">
+                                <h4>Notificações por Email</h4>
+                                <p>Enviar alertas importantes por email</p>
+                            </div>
+                            <div class="list-item-icon"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item-text">
+                                <h4>Alertas de Frequência</h4>
+                                <p>Notificar sobre baixa frequência</p>
+                            </div>
+                            <div class="list-item-icon"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item-text">
+                                <h4>Lembrete de Notas</h4>
+                                <p>Lembrar professores sobre lançamento</p>
+                            </div>
+                            <div class="list-item-icon"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item-text">
+                                <h4>Comunicados Automáticos</h4>
+                                <p>Enviar comunicados para pais</p>
+                            </div>
+                            <div class="list-item-icon"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-card card-half">
+                    <div class="card-header">
+                        <i class="fas fa-shield-alt"></i>
+                        <h2>Segurança e Backup</h2>
+                        <p>Configurações de segurança do sistema</p>
+                    </div>
+                    <div class="card-content-list">
+                        <div class="list-item">
+                            <div class="list-item-text">
+                                <h4>Backup Automático</h4>
+                                <p>Backup diário dos dados</p>
+                            </div>
+                            <div class="list-item-icon"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item-text">
+                                <h4>Autenticação 2FA</h4>
+                                <p>Obrigar 2FA para administradores</p>
+                            </div>
+                            <div class="list-item-icon"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                        <div class="list-item">
+                            <div class="list-item-text">
+                                <h4>Log de Atividades</h4>
+                                <p>Registrar todas as ações</p>
+                            </div>
+                            <div class="list-item-icon"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                        <div class="list-item list-item-backup-info">
+                            <div class="list-item-text">
+                                <h4>Último backup realizado:</h4>
+                                <p class="backup-date">Hoje às <span>10:00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="section-card">
+                <div class="card-header">
+                    <i class="fas fa-sliders-h"></i>
+                    <h2>Configurações Avançadas</h2>
+                    <p>Configurações técnicas do sistema</p>
+                </div>
+                <div class="card-content-grid-advanced">
+                    <div class="form-group-with-icon">
+                        <label for="limiteAlunos">Limite de Alunos por Turma</label>
+                        <div class="input-with-icon">
+                            <input type="number" id="limiteAlunos" name="limiteAlunos" value="35">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="form-group-with-icon">
+                        <label for="duracaoAula">Duração da Aula (minutos)</label>
+                        <div class="input-with-icon">
+                            <input type="number" id="duracaoAula" name="duracaoAula" value="50">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="form-group-with-icon">
+                        <label for="mediaMinima">Média Mínima para Aprovação</label>
+                        <div class="input-with-icon">
+                            <input type="number" step="0.1" id="mediaMinima" name="mediaMinima" value="7.0">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="form-group-with-icon">
+                        <label for="intervaloAulas">Intervalo entre Aulas (minutos)</label>
+                        <div class="input-with-icon">
+                            <input type="number" id="intervaloAulas" name="intervaloAulas" value="10">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="form-group-with-icon">
+                        <label for="frequenciaMinima">Frequência Mínima (%)</label>
+                        <div class="input-with-icon">
+                            <input type="number" id="frequenciaMinima" name="frequenciaMinima" value="75">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="form-group-with-icon">
+                        <label for="toleranciaAtraso">Tolerância de Atraso (minutos)</label>
+                        <div class="input-with-icon">
+                            <input type="number" id="toleranciaAtraso" name="toleranciaAtraso" value="15">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="form-submit-container">
+                <button type="submit" class="btn btn-save btn-large">
+                    <i class="fas fa-save"></i>
+                    Salvar Configurações Atualizadas
+                </button>
+            </div>
+        </main>
+    </form>
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <span class="edited-by">criado by</span>
+            <span class="developer">marciomartins12</span>
+        </div>
+    </footer>

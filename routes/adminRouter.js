@@ -7,4 +7,6 @@ router.get("/student", adminController.student);
 router.get("/teacher", adminController.teacher);
 router.get("/events", adminController.event);
 router.get("/class", adminController.class);
+router.get("/settings", adminController.settings);
+
 module.exports = router 

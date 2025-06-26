@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" href="/css/admin/dashboard.css">
+    <link rel="stylesheet" href="/css/admin/studentAndTeacher.css">
     <link rel="stylesheet" href="/css/admin/class.css">
 </head>
 
@@ -64,7 +65,7 @@
                     <span>click aqui para adicionar Turma</span>
                     <i class="fas fa-plus icon"></i>
                 </div>
-                <div >
+                <div>
                     <span class="number"><button id="novo-aluno-btn" class="btn-primary">
                             <i class="fas fa-plus-circle"></i> Nova Turma
                         </button>
@@ -73,70 +74,76 @@
             </div>
         </section>
 
-        <div class="filters-section card">
+       <div class="filters-section card">
             <h3>Filtros</h3>
             <p>Filtre e busque Turmas</p>
             <div class="filter-controls">
                 
+
                 <select class="input-field filter-select">
                     <option value="">Todas as turmas</option>
                     <option value="3A">3º A</option>
                     <option value="2B">2º B</option>
                     <option value="1C">1º C</option>
                 </select>
+
+                <button class="btn-primary search-button">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
             </div>
         </div>
+    </div>
 
-        <div class="classes-list-section">
-                    <div class="class-item card">
-                        <div class="class-header">
-                            <h3 class="class-title">3º Ano A</h3>
-                            <span class="class-tag tag-period">Manhã</span>
-                            <span class="class-tag tag-level">Ensino Médio</span>
-                            <div class="class-actions">
-                                <button class="btn-icon"><i class="fas fa-eye"></i></button>
-                                <button class="btn-icon"><i class="fas fa-edit"></i></button>
-                                <button class="btn-icon"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </div>
-                        <div class="class-details">
-                            <div class="detail-group">
-                                <i class="fas fa-user-graduate"></i>
-                                <span class="detail-text">28/35 alunos</span>
-                            </div>
-                            <div class="detail-group">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span class="detail-text">Sala 12</span>
-                            </div>
-                            <div class="detail-group">
-                                <i class="fas fa-clock"></i>
-                                <span class="detail-text">07:30 - 12:00</span>
-                            </div>
-                        </div>
-                        <div class="class-coordinator">
-                            <span class="coordinator-label">Coordenador:</span>
-                            <span class="coordinator-name">Prof. Maria Santos</span>
-                        </div>
-                        <div class="class-disciplines">
-                            <span class="disciplines-label">Disciplinas:</span>
-                            <div class="discipline-tags">
-                                <span class="discipline-tag">Matemática</span>
-                                <span class="discipline-tag">Física</span>
-                                <span class="discipline-tag">Química</span>
-                                <span class="discipline-tag">Português</span>
-                                <span class="discipline-tag">História</span>
-                            </div>
-                        </div>
-                        <div class="class-occupancy">
-                            <span class="occupancy-label">Ocupação: 91%</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 91%;"></div>
-                            </div>
-                        </div>
-                        <div class="class-footer">
-                            <button class="btn-primary">Gerenciar</button>
-                        </div>
-                    </div>
+    <div class="classes-list-section">
+        <div class="class-item card">
+            <div class="class-header">
+                <h3 class="class-title">3º Ano A</h3>
+                <span class="class-tag tag-period">Manhã</span>
+                <span class="class-tag tag-level">Ensino Médio</span>
+                <div class="class-actions">
+                    
+                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                    <a href="#" class="btn-icon"><i class="fas fa-trash-alt"></i></a>
+                </div>
+            </div>
+            <div class="class-details">
+                <div class="detail-group">
+                    <i class="fas fa-user-graduate"></i>
+                    <span class="detail-text">28/35 alunos</span>
+                </div>
+                <div class="detail-group">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="detail-text">Sala 12</span>
+                </div>
+                <div class="detail-group">
+                    <i class="fas fa-clock"></i>
+                    <span class="detail-text">07:30 - 12:00</span>
+                </div>
+            </div>
+            <div class="class-coordinator">
+                <span class="coordinator-label">Coordenador:</span>
+                <span class="coordinator-name">Prof. Maria Santos</span>
+            </div>
+            <div class="class-disciplines">
+                <span class="disciplines-label">Disciplinas:</span>
+                <div class="discipline-tags">
+                    <span class="discipline-tag">Matemática</span>
+                    <span class="discipline-tag">Física</span>
+                    <span class="discipline-tag">Química</span>
+                    <span class="discipline-tag">Português</span>
+                    <span class="discipline-tag">História</span>
+                </div>
+            </div>
+            <div class="class-occupancy">
+                <span class="occupancy-label">Ocupação: 91%</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="class-footer">
+                <button class="btn-primary">Gerenciar</button>
+            </div>
+        </div>
     </div>
 
     <div id="student-form-modal" class="modal-overlay">
