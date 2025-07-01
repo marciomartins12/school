@@ -7,4 +7,12 @@ module.exports = class teacherController {
             res.status(500).serd("erro ao buscar a pagina");
         }
     }
+    static async classes(req, res) {
+        try {
+            res.render('teacher/classes')
+        } catch(error) {
+            console.log(error)
+            res.status(500).serd("erro ao buscar a pagina");
+        }
+    }
 }

@@ -1,0 +1,120 @@
+<head>
+    <link rel="stylesheet" href="/css/teacher/classes.css">
+</head>
+
+<header class="navbar">
+    <div class="navbar-left">
+        <span class="system-name">Sistema Escolar</span>
+        <span class="admin-area">Área do Professor</span>
+    </div>
+    <div class="navbar-right">
+        <div class="user-profile">
+            <span>Dona Professoor</span>
+        </div>
+        <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+
+    </div>
+</header>
+
+<div class="main-content">
+    <h3>Bem-vindo, Prof. Dona Dev!</h3>
+
+    <div class="tabs-list" role="tablist" aria-label="Navegação do Painel Administrativo">
+        <a href="/teacher" class="tab-button" id="tab-overview" role="tab" aria-selected="false"
+            aria-controls="panel-overview">Dashboard</a>
+        <a href="/teacher/classes" class="tab-button  active" id="tab-students" role="tab" aria-selected="true"
+            aria-controls="panel-students">Turmas</a>
+        <a href="/teacher/" class="tab-button" id="tab-teachers" role="tab" aria-selected="false"
+            aria-controls="panel-teachers">Notas</a>
+        <a href="/teacher/" class="tab-button" id="tab-classes" role="tab" aria-selected="false"
+            aria-controls="panel-classes">Presença</a>
+        <a href="/teacher/" class="tab-button" id="tab-events" role="tab" aria-selected="false"
+            aria-controls="panel-events">Atividades</a>
+    </div>
+    <div class="turmas-container">
+        <h4>Minhas Turmas</h4>
+
+        <div class="cards-grid">
+            <div class="turma-card">
+                <div class="turma-header">
+                    <div>
+                        <strong>3º Ano A</strong>
+                        <p class="disciplina">Matemática</p>
+                    </div>
+                    <span class="status">Ativa</span>
+                </div>
+
+                <div class="turma-info">
+                    <p><i class="fas fa-users"></i> 32 alunos</p>
+                    <p><i class="fas fa-calendar-alt"></i> Seg, Qua, Sex - 08:00</p>
+                    <p><i class="fas fa-clock"></i> Próxima aula: Hoje às 08:00</p>
+                    <p><i class="fas fa-door-open"></i> Sala 12</p>
+                </div>
+
+                <div class="turma-actions">
+                    <button class="btn-principal">Gerenciar</button>
+                </div>
+            </div>
+            <div class="turma-card">
+                <div class="turma-header">
+                    <div>
+                        <strong>2º Ano B</strong>
+                        <p class="disciplina">Física</p>
+                    </div>
+                    <span class="status">Ativa</span>
+                </div>
+
+                <div class="turma-info">
+                    <p><i class="fas fa-users"></i> 28 alunos</p>
+                    <p><i class="fas fa-calendar-alt"></i> Ter, Qui - 09:00</p>
+                    <p><i class="fas fa-clock"></i> Próxima aula: Amanhã às 09:00</p>
+                    <p><i class="fas fa-door-open"></i> Laboratório 1</p>
+                </div>
+
+                <div class="turma-actions">
+                    <button class="btn-principal">Gerenciar</button>
+                </div>
+            </div>
+            <div class="turma-card">
+                <div class="turma-header">
+                    <div>
+                        <strong>1º Ano C</strong>
+                        <p class="disciplina">Matemática</p>
+                    </div>
+                    <span class="status">Ativa</span>
+                </div>
+
+                <div class="turma-info">
+                    <p><i class="fas fa-users"></i> 35 alunos</p>
+                    <p><i class="fas fa-calendar-alt"></i> Seg, Qua, Sex - 10:30</p>
+                    <p><i class="fas fa-clock"></i> Próxima aula: Hoje às 10:30</p>
+                    <p><i class="fas fa-door-open"></i> Sala 8</p>
+                </div>
+
+                <div class="turma-actions">
+                    <button class="btn-principal">Gerenciar</button>
+                </div>
+            </div>
+            <div class="turma-card">
+                <div class="turma-header">
+                    <div>
+                        <strong>3º Ano A</strong>
+                        <p class="disciplina">Álgebra</p>
+                    </div>
+                    <span class="status">Ativa</span>
+                </div>
+
+                <div class="turma-info">
+                    <p><i class="fas fa-users"></i> 32 alunos</p>
+                    <p><i class="fas fa-calendar-alt"></i> Ter, Qui - 14:00</p>
+                    <p><i class="fas fa-clock"></i> Próxima aula: Hoje às 14:00</p>
+                    <p><i class="fas fa-door-open"></i> Sala 12</p>
+                </div>
+
+                <div class="turma-actions">
+                    <button class="btn-principal">Gerenciar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
