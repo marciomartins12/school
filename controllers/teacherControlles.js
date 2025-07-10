@@ -15,4 +15,12 @@ module.exports = class teacherController {
             res.status(500).serd("erro ao buscar a pagina");
         }
     }
+    static async grades(req, res) {
+        try {
+            res.render('teacher/grades');
+        } catch (error) {
+            console.log(error, 'erro ao renderizar a página');
+            res.status(500).serd("erro ao buscar a pagina");
+        }
+    }
 }
