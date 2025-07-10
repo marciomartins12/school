@@ -1,37 +1,108 @@
 <head>
-    <link rel="stylesheet" href="/css/teacher/classes.css">
+    <link rel="stylesheet" href="/css/teacher/grades.css">
 </head>
 
-<header class="navbar">
-    <div class="navbar-left">
-        <span class="system-name">Sistema Escolar</span>
-        <span class="admin-area">Área do Professor</span>
-    </div>
-    <div class="navbar-right">
-        <div class="user-profile">
-            <span>Dona Professoor</span>
+<div class="container-grades">
+    <div class="container">
+        <h1>Gerenciador de Notas</h1>
+        <div class="class-name" id="classNameDisplay">Turma: 3º Ano - A</div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Aluno</th>
+                    <th>1º Período</th>
+                    <th>2º Período</th>
+                    <th>3º Período</th>
+                    <th>4º Período</th>
+                    <th>Média Final</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+
+            </tbody>
+        </table>
+
+        <div class="save-button-container">
+            <button class="save-button" onclick="saveGrades()">Salvar Notas</button>
         </div>
-        <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
 
     </div>
-</header>
 
-<div class="main-content">
-    <h3>Bem-vindo, Prof. Dona Dev!</h3>
+    <script>
 
-    <div class="tabs-list" role="tablist" aria-label="Navegação do Painel Administrativo">
-        <a href="/teacher" class="tab-button" id="tab-overview" role="tab" aria-selected="false"
-            aria-controls="panel-overview">Dashboard</a>
-        <a href="/teacher/classes" class="tab-button  active" id="tab-students" role="tab" aria-selected="true"
-            aria-controls="panel-students">Turmas</a>
-        <a href="/teacher/grades" class="tab-button" id="tab-teachers" role="tab" aria-selected="false"
-            aria-controls="panel-teachers">Notas</a>
-        <a href="/teacher/3" class="tab-button" id="tab-classes" role="tab" aria-selected="false"
-            aria-controls="panel-classes">Presença</a>
-        <a href="/teacher/" class="tab-button" id="tab-events" role="tab" aria-selected="false"
-            aria-controls="panel-events">Atividades</a>
-    </div>
-    <div class="container-grades">
+        let students = [
+            { name: "Dona dev", grades: [8.5, 7.0, 9.0, 6.5] },
+            { name: "MArcio jose Martins Camara", grades: [7.0, 6.5, 8.0, 7.5] },
+            { name: "teste teste teste", grades: [9.0, 8.5, 9.5, 8.0] },
+            { name: "aaaaa aaaaaaaaa aaaaaa", grades: [6.0, 7.0, 6.5, 5.0] }
+        ];
 
-    </div>
+        const studentTableBody = document.getElementById('studentTableBody');
+
+
+
+        function calculateAverage(grades) {
+            if (grades.length === 0) return 0;
+            const sum = grades.reduce((acc, curr) => acc + curr, 0);
+            return (sum / grades.length).toFixed(2);
+        }
+
+
+        function renderStudents() {
+            studentTableBody.innerHTML = '';
+            students.forEach((student, index) => {
+                const row = studentTableBody.insertRow();
+                const nameCell = row.insertCell();
+                nameCell.textContent = student.name;
+
+                for (let i = 0; i < 4; i++) {
+                    const gradeCell = row.insertCell();
+                    const input = document.createElement('input');
+                    input.type = 'number';
+                    input.min = '0';
+                    input.max = '10';
+                    input.step = '0.1';
+                    input.value = student.grades[i] !== undefined ? student.grades[i] : '';
+                    input.setAttribute('data-student-index', index);
+                    input.setAttribute('data-period-index', i);
+                    input.oninput = updateAverage;
+                    gradeCell.appendChild(input);
+                }
+                const averageCell = row.insertCell();
+                averageCell.className = 'average-grade';
+                averageCell.textContent = calculateAverage(student.grades.filter(n => !isNaN(n)));
+            });
+        }
+
+
+        function updateAverage(event) {
+            const input = event.target;
+            const studentIndex = parseInt(input.getAttribute('data-student-index'));
+            const periodIndex = parseInt(input.getAttribute('data-period-index'));
+            const grade = parseFloat(input.value);
+
+            if (!isNaN(grade) && grade >= 0 && grade <= 10) {
+                students[studentIndex].grades[periodIndex] = grade;
+                const average = calculateAverage(students[studentIndex].grades.filter(n => !isNaN(n)));
+                studentTableBody.rows[studentIndex].cells[5].textContent = average;
+                input.style.border = '1px solid #ccc';
+            } else if (input.value !== '') {
+                input.style.border = '2px solid red';
+                studentTableBody.rows[studentIndex].cells[5].textContent = 'Inválido';
+            } else {
+                students[studentIndex].grades[periodIndex] = undefined;
+                input.style.border = '1px solid #ccc';
+                const average = calculateAverage(students[studentIndex].grades.filter(n => !isNaN(n)));
+                studentTableBody.rows[studentIndex].cells[5].textContent = average;
+            }
+        }
+
+
+        function saveGrades() {
+            //fazer quando for fazer o back
+        }
+
+        document.addEventListener('DOMContentLoaded', renderStudents);
+    </script>
 </div>

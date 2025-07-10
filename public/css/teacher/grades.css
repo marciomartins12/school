@@ -1,0 +1,70 @@
+ 
+        .container {
+            margin: auto;
+            margin-top: 2em;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+        }
+        h1 {
+            color: #333;
+            font-size: 2em;
+            font-weight: 600;
+            text-align: center;
+         
+        }
+        .class-name {
+            font-size: 1.8em;
+            color: #555;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+        td input[type="number"] {
+            width: 70px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .average-grade {
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .save-button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .save-button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .save-button:hover {
+            background-color: #0056b3;
+        }
+     
+   
